@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Heat Transfer Calculator (Private)</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ Simple Password Protection -->
+  <script>
+    const PASSWORD = "mypassword"; // Change anytime
+
+    function checkPassword() {
+      const userInput = document.getElementById("passwordInput").value;
+      if (userInput === PASSWORD) {
+        document.getElementById("protectedContent").style.display = "block";
+        document.getElementById("passwordScreen").style.display = "none";
+      } else {
+        alert("Incorrect password.");
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- ✅ PASSWORD SCREEN -->
+  <div id="passwordScreen" style="
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      height:100vh;
+      font-family:Arial,sans-serif;">
+    <h2>Enter Password</h2>
+    <input type="password" id="passwordInput" placeholder="Password"
+           style="padding:10px;font-size:16px;margin-top:10px;">
+    <button onclick="checkPassword()"
+            style="padding:8px 16px;font-size:16px;margin-top:10px;">
+      Submit
+    </button>
+  </div>
+
+  <!-- ✅ PROTECTED CONTENT (YOUR ENTIRE APP) -->
+  <div id="protectedContent" style="display:none;">
+
+    <header>
+      <h1>Container Heat Transfer Calculator</h1>
+    </header>
+
+    <main>
+      <section class="inputs">
+        <h2>Input Parameters</h2>
+
+        <div class="grid">
+          <label>Outside temperature (°C):
+            <input id="T_inf" type="number" value="25" step="0.1">
+          </label>
+          <label>Inside desired temperature (°C):
+            <input id="T_des" type="number" value="20" step="0.1">
+          </label>
+
+          <label>Heat output per battery (W):
+            <input id="Q_batt" type="number" value="10" step="0.1">
+          </label>
+          <label>Number of batteries:
+            <input id="num_batt" type="number" value="100" step="1">
+          </label>
+
+          <label>Surface emissivity (0–1):
+            <input id="eps" type="number" value="0.8" step="0.01">
+          </label>
+          <label>Surface absorptivity / paint absorptivity (0–1):
+            <input id="Abs_paint" type="number" value="0.6" step="0.01">
+          </label>
+
+          <label>Length (m):
+            <input id="L" type="number" value="6.0" step="0.01">
+          </label>
+          <label>Width (m):
+            <input id="W" type="number" value="2.44" step="0.01">
+          </label>
+          <label>Height (m):
+            <input id="H" type="number" value="2.59" step="0.01">
+          </label>
+        </div>
+
+        <div class="actions">
+          <button id="runBtn">Compute</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+      </section>
+
+      <section class="outputs">
+        <h2>Computed Areas</h2>
+        <pre id="areasOut">—</pre>
+
+        <h2>Total Heat Transfer for Different Insulation Cases (W)</h2>
+        <div id="tableWrap"></div>
+
+        <h2>Notes</h2>
+        <ul>
+          <li>Solar angles evaluated from 0° to 90° in 5° steps.</li>
+          <li>All temperatures entered in °C; calculations use Kelvin internally.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+
+    <!-- ✅ Service Worker (optional/offline) -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js').catch(console.error);
+      }
+    </script>
+
+  </div>
+
+</body>
+</html>
