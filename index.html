@@ -43,9 +43,10 @@
 
   <!-- ✅ PROTECTED CONTENT (YOUR ENTIRE APP) -->
   <div id="protectedContent" style="display:none;">
-
+    
     <header>
       <h1>Container Heat Transfer Calculator</h1>
+      <img src="logo.png" alt="Logo" class="logo">
     </header>
 
     <main>
@@ -54,34 +55,34 @@
 
         <div class="grid">
           <label>Outside temperature (°C):
-            <input id="T_inf" type="number" value="25" step="0.1">
+            <input id="T_inf" type="number" value="0" step="0.1">
           </label>
           <label>Inside desired temperature (°C):
-            <input id="T_des" type="number" value="20" step="0.1">
+            <input id="T_des" type="number" value="0" step="0.1">
           </label>
 
           <label>Heat output per battery (W):
-            <input id="Q_batt" type="number" value="10" step="0.1">
+            <input id="Q_batt" type="number" value="0" step="0.1">
           </label>
           <label>Number of batteries:
-            <input id="num_batt" type="number" value="100" step="1">
+            <input id="num_batt" type="number" value="0" step="1">
           </label>
 
-          <label>Surface emissivity (0–1) (white paint - 0.84, gloss black - 0.92):
-            <input id="eps" type="number" value="0.8" step="0.01">
+          <label>Surface emissivity (0–1)*:
+            <input id="eps" type="number" value="0" step="0.01">
           </label>
-          <label>Surface absorptivity (0–1) (white paint - 0.4, gloss black - 0.92):
-            <input id="Abs_paint" type="number" value="0.6" step="0.01">
+          <label>Surface absorptivity (0–1)**:
+            <input id="Abs_paint" type="number" value="0" step="0.01">
           </label>
 
-          <label>Length (m):
-            <input id="L" type="number" value="6.0" step="0.01">
+          <label>Length (in):
+            <input id="L" type="number" value="0" step="0.01">
           </label>
-          <label>Width (m):
-            <input id="W" type="number" value="2.44" step="0.01">
+          <label>Width (in):
+            <input id="W" type="number" value="0" step="0.01">
           </label>
-          <label>Height (m):
-            <input id="H" type="number" value="2.59" step="0.01">
+          <label>Height (in):
+            <input id="H" type="number" value="0" step="0.01">
           </label>
         </div>
 
@@ -102,7 +103,9 @@
         <ul>
           <li>Solar angles evaluated from 0° to 90° in 5° steps.</li>
           <li>All temperatures entered in °C; calculations use Kelvin internally.</li>
-          
+          <li>*White paint - emissivity of 0.84, gloss black - emissivity of 0.86. </li>
+          <li>**White paint - absorptivity of 0.4, gloss black - absorptivity of 0.96. </li>
+    
         </ul>
       </section>
     </main>
@@ -120,5 +123,6 @@
 
 </body>
 </html>
+
 
 
