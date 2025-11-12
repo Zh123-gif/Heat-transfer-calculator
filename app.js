@@ -31,9 +31,10 @@ function runCalc() {
   const num_batt = parseFloat(document.getElementById('num_batt').value);
   const eps = parseFloat(document.getElementById('eps').value);
   const Abs_paint = parseFloat(document.getElementById('Abs_paint').value);
-  const L = parseFloat(document.getElementById('L').value);
-  const W = parseFloat(document.getElementById('W').value);
-  const H = parseFloat(document.getElementById('H').value);
+  const inch_to_m = 0.0254;
+  const L = parseFloat(document.getElementById('L').value) * inch_to_m;
+  const W = parseFloat(document.getElementById('W').value) * inch_to_m;
+  const H = parseFloat(document.getElementById('H').value) * inch_to_m;
 
   const T_inf = T_inf_C + 273.15;
   const T_des = T_des_C + 273.15;
@@ -151,4 +152,5 @@ function runCalc() {
   html += "</tbody></table>";
   document.getElementById("tableWrap").innerHTML = html;
 }
+
 
