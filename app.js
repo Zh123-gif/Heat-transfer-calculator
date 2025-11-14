@@ -1,6 +1,4 @@
-/* app.js — JavaScript heat transfer calculator
-   Runs fully in the browser, compatible with GitHub Pages.
-*/
+/* app.js — JavaScript heat transfer calculator*/
 
 // Ensure DOM is loaded before attaching events
 window.onload = function () {
@@ -151,6 +149,7 @@ function runCalc() {
   html += "</tbody></table>";
   document.getElementById("tableWrap").innerHTML = html;
 }
+
 
 
 
