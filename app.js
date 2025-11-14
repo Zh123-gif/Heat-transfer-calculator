@@ -35,7 +35,8 @@ function runCalc() {
   const L = parseFloat(document.getElementById('L').value) * inch_to_m;
   const W = parseFloat(document.getElementById('W').value) * inch_to_m;
   const H = parseFloat(document.getElementById('H').value) * inch_to_m;
-
+  const R_poly = parseFloat(document.getElementById('R_wall').value);
+  const R_spr_foam = parseFloat(document.getElementById('R_roof').value);
   const T_inf = T_inf_C + 273.15;
   const T_des = T_des_C + 273.15;
   const Q_tot_batt = Q_batt * num_batt;
@@ -51,8 +52,6 @@ function runCalc() {
     `A_roof  = ${A_roof.toFixed(3)} m²\n`;
 
   // Constants
-  const R_poly = 1.2;
-  const R_spr_foam = 1.2;
   const Cond_steel = 43;
   const Boltz = 5.67e-8;
   const h1 = 10;
@@ -152,5 +151,6 @@ function runCalc() {
   html += "</tbody></table>";
   document.getElementById("tableWrap").innerHTML = html;
 }
+
 
 
