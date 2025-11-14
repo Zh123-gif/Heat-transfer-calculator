@@ -68,10 +68,10 @@
             <input id="num_batt" type="number" value="0" step="1">
           </label>
 
-          <label>Surface emissivity (0–1)*:
+          <label>Surface emissivity (0–1)m<sup>1</sup>:
             <input id="eps" type="number" value="0" step="0.01">
           </label>
-          <label>Surface absorptivity (0–1)**:
+          <label>Surface absorptivity (0–1)m<sup>2</sup>:
             <input id="Abs_paint" type="number" value="0" step="0.01">
           </label>
 
@@ -84,10 +84,10 @@
           <label>Height (in):
             <input id="H" type="number" value="0" step="0.01">
           </label>
-          <label>R-Value (Wall):
+          <label>R-Value (Wall)m<sup>3</sup>:
             <input id="R_wall" type="number" value="1.2" step="0.1">
           </label>
-          <label>R-Value (Roof):
+          <label>R-Value (Roof)m<sup>3</sup>:
             <input id="R_roof" type="number" value="1.2" step="0.1">
           </label>
         </div>
@@ -109,9 +109,10 @@
         <ul>
           <li>Solar angles evaluated from 0° to 90° in 5° steps.</li>
           <li>All temperatures entered in °C; calculations use Kelvin internally.</li>
-          <li>*White paint - emissivity of 0.84, gloss black - emissivity of 0.86. </li>
-          <li>**White paint - absorptivity of 0.4, gloss black - absorptivity of 0.96. </li>
-    
+          <li>m<sup>1</sup>White paint - emissivity of 0.84, gloss black - emissivity of 0.86. </li>
+          <li>m<sup>2</sup>White paint - absorptivity of 0.4, gloss black - absorptivity of 0.96. </li>
+          <li>m<sup>3</sup>R-value is the thermal resistance: polyethylene foam - 1.2 </li>
+          
         </ul>
       </section>
     </main>
@@ -129,6 +130,7 @@
 
 </body>
 </html>
+
 
 
 
