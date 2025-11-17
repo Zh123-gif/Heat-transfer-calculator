@@ -7,15 +7,15 @@ window.onload = function () {
 };
 
 function resetForm() {
-  document.getElementById('T_inf').value = 25;
-  document.getElementById('T_des').value = 20;
-  document.getElementById('Q_batt').value = 10;
-  document.getElementById('num_batt').value = 100;
-  document.getElementById('eps').value = 0.8;
-  document.getElementById('Abs_paint').value = 0.6;
-  document.getElementById('L').value = 6.0;
-  document.getElementById('W').value = 2.44;
-  document.getElementById('H').value = 2.59;
+  document.getElementById('T_inf').value = 0;
+  document.getElementById('T_des').value = 0;
+  document.getElementById('Q_batt').value = 0;
+  document.getElementById('num_batt').value = 0;
+  document.getElementById('eps').value = 0;
+  document.getElementById('Abs_paint').value = 0;
+  document.getElementById('L').value = 0;
+  document.getElementById('W').value = 0;
+  document.getElementById('H').value = 0;
   
   document.getElementById('areasOut').textContent = '—';
   document.getElementById('tableWrap').innerHTML = '';
@@ -149,6 +149,7 @@ function runCalc() {
   html += "</tbody></table>";
   document.getElementById("tableWrap").innerHTML = html;
 }
+
 
 
 
